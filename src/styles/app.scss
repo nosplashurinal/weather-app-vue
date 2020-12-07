@@ -1,0 +1,88 @@
+@import "./global.scss";
+@import "./constants.scss";
+
+.root-container {
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+.bg {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: background-image 500ms ease-in-out;
+  transition: background-image 500ms ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(230, 154, 154, 0.65),
+    rgba(44, 181, 232, 0.4)
+  );
+}
+.title {
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-size: 2.5em;
+  color: #fff;
+  font-family: $font-primary;
+  font-weight: 100;
+  > span {
+    padding: 0.25em;
+    &:nth-child(1) {
+      background-color: rgba($blue, 0.7);
+    }
+  }
+}
+.search-container {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  .results-container {
+    margin-top: 2em;
+    z-index: 9;
+  }
+}
+.toaster {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 1em;
+  > div {
+    background: #4bb543;
+    padding: 0.5em 0.75em;
+    color: #fff;
+    font-size: 2.3em;
+    border-radius: 6px;
+    font-family: $font-primary;
+    font-weight: 300;
+  }
+}
+.ease-enter-active,
+.ease-leave-active {
+  transition: all 900ms cubic-bezier(0, 0.57, 0.01, 0.97);
+}
+.ease-enter, .ease-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: scale(0.9) translate(0, 50px);
+}
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 350ms ease-in-out;
+}
+.slide-enter /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}

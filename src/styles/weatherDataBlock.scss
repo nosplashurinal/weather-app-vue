@@ -1,0 +1,98 @@
+@import "./constants.scss";
+
+.weather-data-block {
+  background: #fff;
+  border: 1px solid #d2d2d2;
+  padding: 12px;
+  -webkit-box-shadow: 0 12px 10px -6px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: 0 12px 10px -6px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 12px 10px -6px rgba(0, 0, 0, 0.65);
+  -webkit-font-smoothing: antialiased;
+  .city {
+    flex: 0 0 100%;
+    text-align: left;
+    font-family: $font-primary;
+    padding-bottom: 12px;
+    font-size: 14px;
+    color: #434343;
+  }
+  .main-block {
+    border: 1px solid #ccc;
+    flex: 0 1 auto;
+    text-align: center;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    .body-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      flex: none;
+      padding: 1em;
+    }
+    .weather-info {
+      flex: 0 1 100%;
+      text-align: left;
+      .temperature-block {
+        > span:not(:first-child) {
+          font-size: 1.5em;
+          color: #a2a2a2;
+          &:not(.active) {
+            color: $blue;
+            cursor: pointer;
+            font-size: 1em;
+          }
+        }
+        > span:first-child {
+          font-size: 4em;
+          color: #434343;
+        }
+        i {
+          width: 2px;
+          height: 18px;
+          background-color: #a2a2a2;
+          display: inline-block;
+          margin: 0 8px;
+        }
+      }
+      .description {
+        font-size: 1em;
+        color: #434343;
+      }
+    }
+  }
+  .forecast-block-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    color: #434343;
+    .forecast-block {
+      display: flex;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex: none;
+      padding: 0;
+      .temperature-forecast-block {
+        display: flex;
+        flex-wrap: nowrap;
+        & > :last-child {
+          color: #a2a2a2;
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+  .icon-large {
+    width: 50px;
+    height: 50px;
+  }
+  .icon-small {
+    width: 24px;
+    height: 24px;
+  }
+}
